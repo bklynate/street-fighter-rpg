@@ -1,6 +1,6 @@
 var $ken = $('.ken');
 var $playerSelectionArea = $(".player-selection-area");
-
+var $ryu = $('.ryu');
 /* javascript */
 
 $(document).ready(function() {
@@ -27,6 +27,12 @@ $(document).ready(function() {
       $ken.addClass('shoryuken');
       setTimeout(function() { $ken.addClass('down'); }, 500);
       setTimeout(function() { $ken.removeClass('shoryuken down'); }, 1000);
+    }
+
+    if (e.key === 'p') {
+      console.log("This is listening");
+      $ryu.addClass('r_punch');
+      setTimeout(function() { $ryu.removeClass('r_punch'); }, 150);
     }
   });
 });

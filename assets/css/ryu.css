@@ -6,11 +6,11 @@
 
 /* css */
 
-.punch {
-  animation: punch steps(2) .15s infinite;
+.r_punch {
+  animation: r_punch steps(2) .15s infinite;
 }
 
-@keyframes punch {
+@keyframes r_punch {
   from {
     background-position: 0px -97px;
   }
@@ -21,11 +21,11 @@
 
 /* kick */
 
-.kick {
-  animation: kick steps(5) 0.5s infinite;
+.r_kick {
+  animation: r_kick steps(5) 0.5s infinite;
 }
 
-@keyframes kick {
+@keyframes r_kick {
   from {
     background-position: 0px -278px;
   }
