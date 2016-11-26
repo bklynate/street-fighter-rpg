@@ -2,177 +2,174 @@
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 
 body {
-  	background-color: #ffffff;
-  	font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #555;
+	background-color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #555;
 
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #333;
 }
 
 h1 {
-	font-size: 35px;
-	margin-top: 30px;
-	margin-bottom: 30px;
+  font-size: 35px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-
-
 
 /* Paragraph & Typographic */
 p {
-    line-height: 28px;
-    margin-bottom: 25px;
-    font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 25px;
+  font-size: 16px;
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 /* Links */
 a {
-    color: #1abc9c;
-    word-wrap: break-word;
-
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+  color: #1abc9c;
+  word-wrap: break-word;
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
 a:hover,
 a:focus {
-    color: #7b7b7b;
-    text-decoration: none;
-    outline: 0;
+  color: #7b7b7b;
+  text-decoration: none;
+  outline: 0;
 }
 
 a:before,
 a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 
 .navbar {
-	text-transform: uppercase;
-	margin-bottom: 0px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
 }
 
 .navbar-inverse {
-	padding-bottom: 70px;
-	padding-top: 70px;
+  padding-bottom: 70px;
+  padding-top: 70px;
 }
 
 .navbar-inverse {
-	background-color: #e74c3c; /*#e74c3c*/
-	border-color: #c0392b;
+  background-color: #e74c3c; /*#e74c3c*/
+  border-color: #c0392b;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-	color: white;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-	color: #222222;
+  color: #222222;
 }
 
 .navbar-brand {
-	font-weight: 700;
-	font-size: 20px;
-	letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 2px;
   font-family: 'Press Start 2P', cursive;
 }
 
 .navbar-inverse .navbar-brand {
-	color: white;
+  color: white;
 }
 
 .navbar-inverse .navbar-toggle {
-	border-color: transparent;
+  border-color: transparent;
 }
-
 
 /* Helpers */
 
 .mt {
-	margin-top: 40px;
-	margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .pt {
-	padding-top: 50px;
-	padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 
 /* +++++ WRAP SECTIONS +++++ */
 
 #ww {
-	padding-top: 70px;
-	padding-bottom: 70px;
-	background-color: #f2f2f2;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: #f2f2f2;
 }
 
 
 #footer {
-	background-color: #2f2f2f;
-	padding-top: 50px;
-	padding-bottom: 50px;
+  background-color: #2f2f2f;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 #footer p {
-	color: white;
+  color: white;
 }
 
 #footer h4 {
-	color: white;
-	text-transform: uppercase;
-	padding-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 20px;
 }
 
 
 /* +++++ Color Wraps / Blog Page +++++ */
 
 #grey {
-	padding-top: 60px;
-	padding-bottom: 60px;
-	background-color: #f2f2f2;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f2f2f2;
 }
 
 #white {
-	padding-top: 60px;
-	padding-bottom: 60px;
-	background-color: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
 }
 
 /* glyphicon Configuration */
 
 .glyphicon {
-	font-size: 40px;
-	color: #1abc9c;
+  font-size: 40px;
+  color: #1abc9c;
 }
 
 
@@ -185,19 +182,19 @@ a:after {
 /* css */
 
 .stance {
-    -webkit-animation: stance steps(4) 0.5s infinite;
-    -moz-animation: stance steps(4) 0.5s infinite;
-    -ms-animation: stance steps(4) 0.5s infinite;
-    animation: stance steps(4) 0.5s infinite;
+  -webkit-animation: stance steps(4) 0.5s infinite;
+  -moz-animation: stance steps(4) 0.5s infinite;
+  -ms-animation: stance steps(4) 0.5s infinite;
+  animation: stance steps(4) 0.5s infinite;
 }
 
 @keyframes stance {
-    from {
-        background-position: 0px -80px;
-    }
-    to {
-        background-position: -280px -80px;
-    }
+  from {
+    background-position: 0px -80px;
+  }
+  to {
+    background-position: -280px -80px;
+  }
 }
 
 .punch {
@@ -216,46 +213,46 @@ a:after {
 /* kick */
 
 .kick {
-    -webkit-animation: kick steps(5) 0.5s infinite;
-    -moz-animation: kick steps(5) 0.5s infinite;
-    -ms-animation: kick steps(5) 0.5s infinite;
-    animation: kick steps(5) 0.5s infinite;
+  -webkit-animation: kick steps(5) 0.5s infinite;
+  -moz-animation: kick steps(5) 0.5s infinite;
+  -ms-animation: kick steps(5) 0.5s infinite;
+  animation: kick steps(5) 0.5s infinite;
 }
 
 @keyframes kick {
-    from {
-        background-position: 0px -480px;
-    }
-    to {
-        background-position: -350px -480px;
-    }
+  from {
+    background-position: 0px -480px;
+  }
+  to {
+    background-position: -350px -480px;
+  }
 }
 
 /* shoryuken */
 
 .shoryuken {
-    height: 110px;
-    background-image: url(../../imgs/ken-shoryuken.png);
-    -webkit-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
-    -moz-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
-    -ms-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
-    transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
-    bottom: 225px;
-    -webkit-animation: shoryuken steps(7) 1s infinite;
-    -moz-animation: shoryuken steps(7) 1s infinite;
-    -ms-animation: shoryuken steps(7) 1s infinite;
-    animation: shoryuken steps(7) 1s infinite;
+  height: 110px;
+  background-image: url(../../imgs/ken-shoryuken.png);
+  -webkit-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  -moz-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  -ms-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  bottom: 225px;
+  -webkit-animation: shoryuken steps(7) 1s infinite;
+  -moz-animation: shoryuken steps(7) 1s infinite;
+  -ms-animation: shoryuken steps(7) 1s infinite;
+  animation: shoryuken steps(7) 1s infinite;
 }
 
 .shoryuken.down {
-    bottom: 112px;
+  bottom: 112px;
 }
 
 @keyframes shoryuken {
-    from {
-        background-position: 0px 0px;
-    }
-    to {
-        background-position: -490px 0px;
-    }
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -490px 0px;
+  }
 }
