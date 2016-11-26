@@ -12,6 +12,7 @@ body {
 }
 
 /* Titles */
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -24,9 +25,8 @@ h1 {
 	margin-bottom: 30px;
 }
 
-
-
 /* Paragraph & Typographic */
+
 p {
     line-height: 28px;
     margin-bottom: 25px;
@@ -38,14 +38,12 @@ p {
 }
 
 /* Links */
+
 a {
     color: #1abc9c;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
@@ -59,13 +57,10 @@ a:focus {
 a:before,
 a:after {
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
- hr {
+hr {
     display: block;
     height: 1px;
     border: 0;
@@ -73,7 +68,6 @@ a:after {
     margin: 1em 0;
     padding: 0;
 }
-
 
 .navbar {
 	text-transform: uppercase;
@@ -116,7 +110,6 @@ a:after {
   background-color: #1abc9c;
 }
 
-
 /* Helpers */
 
 .mt {
@@ -129,7 +122,6 @@ a:after {
 	padding-bottom: 50px;
 }
 
-
 /* +++++ WRAP SECTIONS +++++ */
 
 #ww {
@@ -137,7 +129,6 @@ a:after {
 	padding-bottom: 70px;
 	background-color: #f2f2f2;
 }
-
 
 #footer {
 	background-color: #2f2f2f;
@@ -155,7 +146,6 @@ a:after {
 	padding-bottom: 20px;
 }
 
-
 /* +++++ Color Wraps / Blog Page +++++ */
 
 #grey {
@@ -170,9 +160,8 @@ a:after {
 	background-color: #ffffff;
 }
 
-
-
 /* Blog Date*/
+
 bd {
 	font-size: 12px;
 	text-transform: uppercase;
@@ -181,18 +170,21 @@ bd {
 }
 
 /* Blog Author*/
+
 ba {
 	font-size: 12px;
 	text-transform: uppercase;
 }
 
 /* Blog Quote */
+
 .bq {
 	font-size: 22px;
 	padding-top: 30px;
 }
 
 /* Blog Tags */
+
 bt {
 	font-size: 12px;
 }
@@ -204,8 +196,8 @@ bt {
 	color: #1abc9c;
 }
 
-
 /* ALL ANIMATION FOR KEN HERE */
+
 .ken {
   width:70px; height:80px; /* exactly the size of an image in our sprite */
   background-image:url('../../imgs/ken.png');
@@ -215,9 +207,16 @@ bt {
 
 .stance {
     -webkit-animation: stance steps(4) 0.5s infinite;
-    -moz-animation: stance steps(4) 0.5s infinite;
-    -ms-animation: stance steps(4) 0.5s infinite;
     animation: stance steps(4) 0.5s infinite;
+}
+
+@-webkit-keyframes stance {
+    from {
+        background-position: 0px -80px;
+    }
+    to {
+        background-position: -280px -80px;
+    }
 }
 
 @keyframes stance {
@@ -230,7 +229,17 @@ bt {
 }
 
 .punch {
-  animation: punch steps(3) .15s infinite;
+  -webkit-animation: punch steps(3) .15s infinite;
+          animation: punch steps(3) .15s infinite;
+}
+
+@-webkit-keyframes punch {
+  from {
+    background-position: 0px -160px;
+  }
+  to {
+    background-position: -210px -160px;
+  }
 }
 
 @keyframes punch {
@@ -246,9 +255,16 @@ bt {
 
 .kick {
     -webkit-animation: kick steps(5) 0.5s infinite;
-    -moz-animation: kick steps(5) 0.5s infinite;
-    -ms-animation: kick steps(5) 0.5s infinite;
     animation: kick steps(5) 0.5s infinite;
+}
+
+@-webkit-keyframes kick {
+    from {
+        background-position: 0px -480px;
+    }
+    to {
+        background-position: -350px -480px;
+    }
 }
 
 @keyframes kick {
@@ -266,18 +282,23 @@ bt {
     height: 110px;
     background-image: url(../../imgs/ken-shoryuken.png);
     -webkit-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
-    -moz-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
-    -ms-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
     transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
     bottom: 225px;
     -webkit-animation: shoryuken steps(7) 1s infinite;
-    -moz-animation: shoryuken steps(7) 1s infinite;
-    -ms-animation: shoryuken steps(7) 1s infinite;
     animation: shoryuken steps(7) 1s infinite;
 }
 
 .shoryuken.down {
     bottom: 112px;
+}
+
+@-webkit-keyframes shoryuken {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: -490px 0px;
+    }
 }
 
 @keyframes shoryuken {
