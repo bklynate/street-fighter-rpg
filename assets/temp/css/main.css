@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 body {
   	background-color: #ffffff;
   	font-family: 'Montserrat', sans-serif;
@@ -10,35 +10,27 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
 }
-
 /* Titles */
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #333;
 }
-
 h1 {
 	font-size: 35px;
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
-
 /* Paragraph & Typographic */
-
 p {
     line-height: 28px;
     margin-bottom: 25px;
     font-size: 16px;
 }
-
 .centered {
     text-align: center;
 }
-
 /* Links */
-
 a {
     color: #1abc9c;
     word-wrap: break-word;
@@ -46,20 +38,17 @@ a {
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
-
 a:hover,
 a:focus {
     color: #7b7b7b;
     text-decoration: none;
     outline: 0;
 }
-
 a:before,
 a:after {
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
-
 hr {
     display: block;
     height: 1px;
@@ -68,115 +57,90 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
 .navbar {
 	text-transform: uppercase;
 	margin-bottom: 0px;
 }
-
 .navbar-inverse {
 	padding-bottom: 70px;
 	padding-top: 70px;
 }
-
 .navbar-inverse {
-	background-color: #1abc9c;
-	border-color: #16a085;
+	background-color: #e74c3c; /*#e74c3c*/
+	border-color: #c0392b;
 }
-
 .navbar-inverse .navbar-nav > li > a {
 	color: white;
 }
-
 .navbar-inverse .navbar-nav > li > a:hover {
 	color: #222222;
 }
-
 .navbar-brand {
 	font-weight: 700;
 	font-size: 20px;
 	letter-spacing: 2px;
+  font-family: 'Press Start 2P', cursive;
 }
-
 .navbar-inverse .navbar-brand {
 	color: white;
 }
-
 .navbar-inverse .navbar-toggle {
 	border-color: transparent;
 }
-
 /* Helpers */
-
 .mt {
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
-
 .pt {
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
-
 /* +++++ WRAP SECTIONS +++++ */
-
 #ww {
 	padding-top: 70px;
 	padding-bottom: 70px;
 	background-color: #f2f2f2;
 }
-
 #footer {
 	background-color: #2f2f2f;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
-
 #footer p {
 	color: white;
 }
-
 #footer h4 {
 	color: white;
 	text-transform: uppercase;
 	padding-bottom: 20px;
 }
-
 /* +++++ Color Wraps / Blog Page +++++ */
-
 #grey {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	background-color: #f2f2f2;
 }
-
 #white {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	background-color: #ffffff;
 }
-
 /* glyphicon Configuration */
-
 .glyphicon {
 	font-size: 40px;
 	color: #1abc9c;
 }
-
 /* ALL ANIMATION FOR KEN HERE */
-
 .ken {
   width:70px; height:80px; /* exactly the size of an image in our sprite */
   background-image:url('../../imgs/ken.png');
 }
-
 /* css */
-
 .stance {
     -webkit-animation: stance steps(4) 0.5s infinite;
     animation: stance steps(4) 0.5s infinite;
 }
-
 @-webkit-keyframes stance {
     from {
         background-position: 0px -80px;
@@ -185,7 +149,6 @@ hr {
         background-position: -280px -80px;
     }
 }
-
 @keyframes stance {
     from {
         background-position: 0px -80px;
@@ -194,12 +157,10 @@ hr {
         background-position: -280px -80px;
     }
 }
-
 .punch {
   -webkit-animation: punch steps(3) .15s infinite;
           animation: punch steps(3) .15s infinite;
 }
-
 @-webkit-keyframes punch {
   from {
     background-position: 0px -160px;
@@ -208,7 +169,6 @@ hr {
     background-position: -210px -160px;
   }
 }
-
 @keyframes punch {
   from {
     background-position: 0px -160px;
@@ -217,14 +177,11 @@ hr {
     background-position: -210px -160px;
   }
 }
-
 /* kick */
-
 .kick {
     -webkit-animation: kick steps(5) 0.5s infinite;
     animation: kick steps(5) 0.5s infinite;
 }
-
 @-webkit-keyframes kick {
     from {
         background-position: 0px -480px;
@@ -233,7 +190,6 @@ hr {
         background-position: -350px -480px;
     }
 }
-
 @keyframes kick {
     from {
         background-position: 0px -480px;
@@ -242,9 +198,7 @@ hr {
         background-position: -350px -480px;
     }
 }
-
 /* shoryuken */
-
 .shoryuken {
     height: 110px;
     background-image: url(../../imgs/ken-shoryuken.png);
@@ -254,11 +208,9 @@ hr {
     -webkit-animation: shoryuken steps(7) 1s infinite;
     animation: shoryuken steps(7) 1s infinite;
 }
-
 .shoryuken.down {
     bottom: 112px;
 }
-
 @-webkit-keyframes shoryuken {
     from {
         background-position: 0px 0px;
@@ -267,7 +219,6 @@ hr {
         background-position: -490px 0px;
     }
 }
-
 @keyframes shoryuken {
     from {
         background-position: 0px 0px;
