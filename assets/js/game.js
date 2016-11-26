@@ -4,10 +4,9 @@ var $playerSelectionArea = $(".player-selection-area");
 /* javascript */
 
 $(document).ready(function() {
-
   $("#ken_img").on('click', function(){
-    $('#ken_p').toggleClass('hide')
-    $("#ken_p").fadeToggle(750);
+    $("#ken_p").fadeToggle();
+    $("#ken_p").removeClass("hidden")
   })
 
   $(document).on('keydown', function(e) { // 'e' stands for event

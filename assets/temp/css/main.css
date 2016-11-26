@@ -96,6 +96,9 @@ hr {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+.hidden {
+  display: none;
+}
 .profile-img {
   border-radius: 50px;
 }
