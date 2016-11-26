@@ -3,7 +3,6 @@
 
 body {
 	background-color: #ffffff;
-	/*font-family: 'Montserrat', sans-serif;*/
   font-family: 'Press Start 2P', cursive;
   font-weight: 400;
   font-size: 14px;
@@ -15,7 +14,6 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-  /*font-family: 'Montserrat', sans-serif;*/
   font-family: 'Press Start 2P', cursive;
   font-weight: 700;
   color: #333;
@@ -130,6 +128,9 @@ a:after {
   border-radius: 50px;
 }
 
+.flipped {
+  transform: scaleX(-1);
+}
 
 /* +++++ WRAP SECTIONS +++++ */
 
@@ -148,6 +149,7 @@ a:after {
 
 #footer p {
   color: white;
+  font-size: 12px;
 }
 
 #footer h4 {

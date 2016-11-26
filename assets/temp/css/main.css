@@ -2,7 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 body {
 	background-color: #ffffff;
-	/*font-family: 'Montserrat', sans-serif;*/
   font-family: 'Press Start 2P', cursive;
   font-weight: 400;
   font-size: 14px;
@@ -13,7 +12,6 @@ body {
 }
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-  /*font-family: 'Montserrat', sans-serif;*/
   font-family: 'Press Start 2P', cursive;
   font-weight: 700;
   color: #333;
@@ -101,6 +99,10 @@ hr {
 .profile-img {
   border-radius: 50px;
 }
+.flipped {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
 /* +++++ WRAP SECTIONS +++++ */
 #ww {
   padding-top: 70px;
@@ -114,6 +116,7 @@ hr {
 }
 #footer p {
   color: white;
+  font-size: 12px;
 }
 #footer h4 {
   color: white;

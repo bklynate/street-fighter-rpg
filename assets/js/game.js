@@ -6,6 +6,7 @@ var $playerSelectionArea = $(".player-selection-area");
 $(document).ready(function() {
 
   $("#ken_img").on('click', function(){
+    $('#ken_p').toggleClass('hide')
     $("#ken_p").fadeToggle(750);
   })
 
