@@ -25,6 +25,10 @@ h1 {
   margin-bottom: 30px;
 }
 
+h4 {
+  border-bottom: 4px solid black;
+}
+
 /* Paragraph & Typographic */
 p {
   line-height: 28px;
