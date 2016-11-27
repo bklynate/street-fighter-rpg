@@ -76,13 +76,6 @@ $(document).ready(function() {
         $(".ryu").addClass('ryu_kick');
         setTimeout(function() { $(".ryu").removeClass('ryu_kick'); }, 500);
       }
-
-      if (e.key === 's') {
-        console.log("This is listening");
-        $(".ryu").addClass('shoryuken');
-        setTimeout(function() { $(".ryu").addClass('down'); }, 500);
-        setTimeout(function() { $(".ryu").removeClass('shoryuken down'); }, 1000);
-      }
     }
 
     if(playerName === "ken") {
