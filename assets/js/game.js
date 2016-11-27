@@ -76,7 +76,7 @@ $(document).ready(function() {
         $(".ryu").addClass('ryu_kick');
         setTimeout(function() { $(".ryu").removeClass('ryu_kick'); }, 500);
       }
-    }
+    } // Closes the if player === ryu conditional
 
     if(playerName === "ken") {
       if (e.key === 'p') {
@@ -97,6 +97,6 @@ $(document).ready(function() {
         setTimeout(function() { $(".ken").addClass('down'); }, 500);
         setTimeout(function() { $(".ken").removeClass('shoryuken down'); }, 1000);
       }
-    }
+    } // Closes the if player === ken conditional
   });
 });
