@@ -1,12 +1,20 @@
 var $ken = $('.ken');
+var $kenImg = $("#ken_img");
 var $playerSelectionArea = $(".player-selection-area");
 var $ryu = $('.ryu');
 /* javascript */
 
 $(document).ready(function() {
-  $("#ken_img").on('click', function(){
-    $("#ken_p").fadeToggle();
-    $("#ken_p").removeClass("hidden")
+  // $("#ken_img").on('click', function(){
+  //   $("#ken_p").fadeToggle();
+  //   $("#ken_p").removeClass("hidden")
+  // })
+
+  $kenImg.on('click', function(){
+    var $kenDiv = $("<div class='ken stance hidden'>")
+    $(".attacker").append($kenDiv);
+    $kenDiv.fadeToggle();
+    $kenDiv.removeClass('hidden')
   })
 
   $(document).on('keydown', function(e) { // 'e' stands for event
