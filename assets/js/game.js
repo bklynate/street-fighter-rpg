@@ -1,8 +1,12 @@
 var $ken = $('.ken');
 var $kenImg = $("#ken_img");
+var kenHealth = 100;
 var $playerSelectionArea = $(".player-selection-area");
 var $ryu = $('.ryu');
 var $ryuImg = $('#ryu_img')
+var ryuHealth = 130;
+var playerName;
+var computerName;
 
 /* Peter's edits */
 
@@ -21,9 +25,11 @@ $ryuImg.on('click', function(){
 function player(name) {
   if (attChoice === false) {
     chooseChar(name, ".attacker");
+    playerName = name
     attChoice = true;
   } else if(defChoice === false) {
     chooseChar(name, ".defender .flipped");
+    computerName = name
     defChoice = true;
   }
 }
@@ -35,8 +41,8 @@ function chooseChar(name, position) {
   temp.removeClass('hidden');
 }
 
-/* javascript */
-
+/* Game Engine */
+console.log(player);
 $(document).ready(function() {
   // $("#ken_img").on('click', function(){
   //   $("#ken_p").fadeToggle();
@@ -58,23 +64,46 @@ $(document).ready(function() {
   // })
 
   $(document).on('keydown', function(e) { // 'e' stands for event
-    if (e.key === 'p') {
-      console.log("This is listening", $(".ken"));
-      $(".ken").addClass('punch');
-      setTimeout(function() { $(".ken").removeClass('punch'); }, 150);
+    if(playerName === "ryu"){
+      if (e.key === 'p') {
+        console.log("This is listening");
+        $(".ryu").addClass('ryu_punch');
+        setTimeout(function() { $(".ryu").removeClass('ryu_punch'); }, 150);
+      }
+
+      if (e.key === 'k') {
+        console.log("This is listening");
+        $(".ryu").addClass('ryu_kick');
+        setTimeout(function() { $(".ryu").removeClass('ryu_kick'); }, 500);
+      }
+
+      if (e.key === 's') {
+        console.log("This is listening");
+        $(".ryu").addClass('shoryuken');
+        setTimeout(function() { $(".ryu").addClass('down'); }, 500);
+        setTimeout(function() { $(".ryu").removeClass('shoryuken down'); }, 1000);
+      }
     }
 
-    if (e.key === 'k') {
-      console.log("This is listening");
-      $(".ken").addClass('kick');
-      setTimeout(function() { $(".ken").removeClass('kick'); }, 500);
-    }
+    if(playerName === "ken") {
+      if (e.key === 'p') {
+        console.log("This is listening", $(".ken"));
+        $(".ken").addClass('punch');
+        setTimeout(function() { $(".ken").removeClass('punch'); }, 150);
+      }
 
-    if (e.key === 's') {
-      console.log("This is listening");
-      $(".ken").addClass('shoryuken');
-      setTimeout(function() { $(".ken").addClass('down'); }, 500);
-      setTimeout(function() { $(".ken").removeClass('shoryuken down'); }, 1000);
+      if (e.key === 'k') {
+        console.log("This is listening");
+        $(".ken").addClass('kick');
+        setTimeout(function() { $(".ken").removeClass('kick'); }, 500);
+      }
+
+      if (e.key === 's') {
+        console.log("This is listening");
+        $(".ken").addClass('shoryuken');
+        setTimeout(function() { $(".ken").addClass('down'); }, 500);
+        setTimeout(function() { $(".ken").removeClass('shoryuken down'); }, 1000);
+      }
     }
   });
 });

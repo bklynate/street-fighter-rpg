@@ -7,10 +7,10 @@
 /* css */
 
 .ryu_stance {
-  -webkit-animation: stance steps(4) 0.5s infinite;
-  -moz-animation: stance steps(4) 0.5s infinite;
-  -ms-animation: stance steps(4) 0.5s infinite;
-  animation: stance steps(4) 0.5s infinite;
+  -webkit-animation: ryu_stance steps(4) 0.5s infinite;
+  -moz-animation: ryu_stance steps(4) 0.5s infinite;
+  -ms-animation: ryu_stance steps(4) 0.5s infinite;
+  animation: ryu_stance steps(4) 0.5s infinite;
 }
 
 @keyframes ryu_stance {
@@ -22,11 +22,11 @@
   }
 }
 
-.r_punch {
-  animation: r_punch steps(2) .15s infinite;
+.ryu_punch {
+  animation: ryu_punch steps(2) .15s infinite;
 }
 
-@keyframes r_punch {
+@keyframes ryu_punch {
   from {
     background-position: 0px -97px;
   }
@@ -37,11 +37,11 @@
 
 /* kick */
 
-.r_kick {
-  animation: r_kick steps(5) 0.5s infinite;
+.ryu_kick {
+  animation: ryu_kick steps(5) 0.5s infinite;
 }
 
-@keyframes r_kick {
+@keyframes ryu_kick {
   from {
     background-position: 0px -278px;
   }
