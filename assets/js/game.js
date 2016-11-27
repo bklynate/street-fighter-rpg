@@ -2,6 +2,7 @@ var $ken = $('.ken');
 var $kenImg = $("#ken_img");
 var $playerSelectionArea = $(".player-selection-area");
 var $ryu = $('.ryu');
+
 /* javascript */
 
 $(document).ready(function() {
