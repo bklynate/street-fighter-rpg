@@ -151,11 +151,11 @@ hr {
   background-image:url('../../imgs/ken.png');
 }
 /* css */
-.stance {
-  -webkit-animation: stance steps(4) 0.5s infinite;
-  animation: stance steps(4) 0.5s infinite;
+.ken_stance {
+  -webkit-animation: ken_stance steps(4) 0.5s infinite;
+  animation: ken_stance steps(4) 0.5s infinite;
 }
-@-webkit-keyframes stance {
+@-webkit-keyframes ken_stance {
   from {
     background-position: 0px -80px;
   }
@@ -163,7 +163,7 @@ hr {
     background-position: -280px -80px;
   }
 }
-@keyframes stance {
+@keyframes ken_stance {
   from {
     background-position: 0px -80px;
   }

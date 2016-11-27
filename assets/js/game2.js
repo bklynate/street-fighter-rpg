@@ -4,13 +4,13 @@ var $ryu = $('.ryu');
 $(document).on('keydown', function(e) { // 'e' stands for event
   if (e.key === 'p') {
     console.log("This is listening");
-    $ryu.addClass('punch');
-    setTimeout(function() { $ryu.removeClass('punch'); }, 150);
+    $ryu.addClass('r_punch');
+    setTimeout(function() { $ryu.removeClass('r_punch'); }, 150);
   }
 
   if (e.key === 'k') {
     console.log("This is listening");
-    $ryu.addClass('kick');
-    setTimeout(function() { $ryu.removeClass('kick'); }, 500);
+    $ryu.addClass('r_kick');
+    setTimeout(function() { $ryu.removeClass('r_kick'); }, 500);
   }
 });
