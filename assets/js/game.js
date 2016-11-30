@@ -8,8 +8,6 @@ var ryuHealth = 130;
 var playerName;
 var computerName;
 
-/* Peter's edits */
-
 var attChoice = false;
 var defChoice = false;
 

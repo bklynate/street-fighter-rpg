@@ -22,7 +22,7 @@ h1 {
   margin-bottom: 30px;
 }
 h4 {
-  text-decoration: underline;
+  border-bottom: 4px solid black
 }
 /* Paragraph & Typographic */
 p {
