@@ -1,100 +1,43 @@
-var $ken = $('.ken');
-var $kenImg = $("#ken_img");
-var kenHealth = 100;
-var $playerSelectionArea = $(".player-selection-area");
-var $ryu = $('.ryu');
-var $ryuImg = $('#ryu_img')
-var ryuHealth = 130;
-var playerName;
-var computerName;
+var game = {
+  // object of all the characters in the game
+  characters: {
+    "ryu": {
+      name: "Ryu",
+      class: ".ryu",
+      hp: 200,
+      atk: 15
+    },
+    "ken": {
+      name: "Ken",
+      class: ".ken",
+      hp: 250,
+      atk: 9
+    }
+  },
+  // variables needed to play the game
+  player: "",
+  playerHp: 0,
+  playerAttack: 0,
+  computerPlayer: "",
+  computerHp: 0,
+  computerAttack: 0,
+  gamePlayers: [],
+  opponentsLeft: true,
+  // variables to manipulate the DOM
+  playerElement: $('#attacker'),
+  defenderElement: $('#defender'),
 
-var attChoice = false;
-var defChoice = false;
-
-$kenImg.on('click', function(){
-  player("ken");
-});
-
-$ryuImg.on('click', function(){
-  player("ryu");
-})
-
-
-function player(name) {
-  if (attChoice === false) {
-    chooseChar(name, ".attacker");
-    playerName = name
-    attChoice = true;
-  } else if(defChoice === false) {
-    chooseChar(name, ".defender .flipped");
-    computerName = name
-    defChoice = true;
+  // game functions
+  assignPlayers: function(player) {
+    if(this.player == '') {
+      this.player = player;
+      console.log(player);
+    }
   }
 }
 
-function chooseChar(name, position) {
-  var temp = $("<div class='" + name + " "+name+ "_stance hidden'>")
-  $(position).append(temp);
-  temp.fadeToggle();
-  temp.removeClass('hidden');
-}
-
-/* Game Engine */
-console.log(player);
-$(document).ready(function() {
-  // $("#ken_img").on('click', function(){
-  //   $("#ken_p").fadeToggle();
-  //   $("#ken_p").removeClass("hidden")
-  // })
-
-  // $kenImg.on('click', function(){
-  //   $kenDiv = $("<div class='ken stance hidden'>")
-  //   $(".attacker").append($kenDiv);
-  //   $kenDiv.fadeToggle();
-  //   $kenDiv.removeClass('hidden')
-  // })
-  //
-  // $ryuImg.on('click', function(){
-  //   $ryuDiv = $("<div class='ryu stance hidden'>")
-  //   $(".attacker").append($ryuDiv);
-  //   $ryuDiv.fadeToggle();
-  //   $ryuDiv.removeClass('hidden')
-  // })
-
-  $(document).on('keydown', function(e) { // 'e' stands for event
-    if(playerName === "ryu"){
-      if (e.key === 'p') {
-        console.log("This is listening");
-        $(".ryu").addClass('ryu_punch');
-        setTimeout(function() { $(".ryu").removeClass('ryu_punch'); }, 150);
-      }
-
-      if (e.key === 'k') {
-        console.log("This is listening");
-        $(".ryu").addClass('ryu_kick');
-        setTimeout(function() { $(".ryu").removeClass('ryu_kick'); }, 500);
-      }
-    } // Closes the if player === ryu conditional
-
-    if(playerName === "ken") {
-      if (e.key === 'p') {
-        console.log("This is listening", $(".ken"));
-        $(".ken").addClass('punch');
-        setTimeout(function() { $(".ken").removeClass('punch'); }, 150);
-      }
-
-      if (e.key === 'k') {
-        console.log("This is listening");
-        $(".ken").addClass('kick');
-        setTimeout(function() { $(".ken").removeClass('kick'); }, 500);
-      }
-
-      if (e.key === 's') {
-        console.log("This is listening");
-        $(".ken").addClass('shoryuken');
-        setTimeout(function() { $(".ken").addClass('down'); }, 500);
-        setTimeout(function() { $(".ken").removeClass('shoryuken down'); }, 1000);
-      }
-    } // Closes the if player === ken conditional
-  });
-});
+$(document).ready(function(){
+  $("img").on('click', function(e){
+    console.log(e.currentTarget.offsetParent.id);
+  })
+})
