@@ -3,6 +3,9 @@ var $kenImg = $("#ken_img");
 var $ryuImg = $("#ryu_img");
 var $atkBtn = $("#attack-btn");
 var $playerHp = $("#playerHp");
+var $p1BarDiv;
+var $playerBar;
+var $opponentBar;
 
 // game object
 var game = {
@@ -11,13 +14,13 @@ var game = {
     "ryu": {
       name: "Ryu",
       class: ".ryu",
-      hp: 200,
-      atk: 15
+      hp: 108,
+      atk: 9
     },
     "ken": {
       name: "Ken",
       class: ".ken",
-      hp: 250,
+      hp: 108,
       atk: 9
     }
   },
@@ -95,24 +98,28 @@ var game = {
     };
 
     if(this.player === "ken") {
-      randomProperty(kenMoves)()
-      console.log(this.opponentHp - this.playerAttack)
+      randomProperty(kenMoves)();
     } else if (this.player === "ryu") {
-      randomProperty(ryuMoves)()
+      randomProperty(ryuMoves)();
     };
 
+    if(this.computerPlayer === "ken") {
+      randomProperty(kenMoves)();
+    } else if (this.computerPlayer === "ryu") {
+      randomProperty(ryuMoves)();
+    };
   },
 
   constructUi: function() {
     if(this.needUi) {
-      var $p1BarDiv = $("<div>");
-      var $p2BarDiv = $("<div>");
-      var $playerBar = $('<div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">');
-      var $opponentBar = $('<div role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">');
+      $p1BarDiv = $("<div>");
+      $p2BarDiv = $("<div>");
+      $playerBar = $('<div role="progressbar" aria-valuemin="0" style="width: 0%;">');
+      $opponentBar = $('<div role="progressbar"  aria-valuemin="0" style="width: 0%;">');
       $p1BarDiv.addClass('progress');
       $p2BarDiv.addClass('progress');
       $playerBar.addClass('progress-bar');
-      $opponentBar.addClass('progress-bar');
+      $opponentBar.addClass('progress-bar progress-bar-danger');
       $playerBar.css('width', this.playerHp+'%');
       if(this.player === "ken") {
         $p1BarDiv.css('margin-top', '20px');
@@ -124,21 +131,53 @@ var game = {
       $('#p1').append($p1BarDiv.append($playerBar));
       $('#p2').append($p2BarDiv.append($opponentBar));
     }
+  },
+
+  updateUi: function() {
+    var randomAtkMultiplier = Math.floor(Math.random() * 3)
+    var randomAtkMultiplier2 = Math.floor(Math.random() * 3)
+    this.computerHp -= (this.playerAttack * randomAtkMultiplier)
+    console.log("playerAtk this round: ", (this.playerAttack * randomAtkMultiplier));
+    $opponentBar.css('width', this.computerHp+'%');
+    this.playerHp -= (this.computerAttack * randomAtkMultiplier2)
+    console.log("computerAtk this round: ", (this.computerAttack * randomAtkMultiplier2));
+    $playerBar.css('width', this.playerHp+'%');
+
+    this.checkForWinner()
+  },
+
+  checkForWinner: function() {
+    if(this.playerHp <= 0) {
+      $('#main-banner').html("You Lose");
+      $atkBtn.css("pointer-events","none")
+      this.resetGame();
+    } else if (this.computerHp <= 0) {
+      $('#main-banner').html("You Win");
+      $atkBtn.css("pointer-events","none")
+      this.resetGame();
+    }
+  },
+
+  resetGame: function () {
+    setTimeout(function() {
+      location.reload()
+    }, 5300);
   }
 }
 
 $(document).ready(function(){
   $kenImg.on('click', function(){
-    var data = $(this).data("name")
+    var data = $(this).data("name");
     game.assignPlayers(data);
   });
 
   $ryuImg.on('click', function(){
-    var data = $(this).data("name")
+    var data = $(this).data("name");
     game.assignPlayers(data);
   });
 
   $atkBtn.on('click', function(){
     game.performAttack();
+    game.updateUi();
   });
 });
