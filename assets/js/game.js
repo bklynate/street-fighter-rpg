@@ -142,18 +142,21 @@ var game = {
     this.playerHp -= (this.computerAttack * randomAtkMultiplier2)
     console.log("computerAtk this round: ", (this.computerAttack * randomAtkMultiplier2));
     $playerBar.css('width', this.playerHp+'%');
-
     this.checkForWinner()
   },
 
   checkForWinner: function() {
     if(this.playerHp <= 0) {
       $('#main-banner').html("You Lose");
-      $atkBtn.css("pointer-events","none")
+      $atkBtn.css("pointer-events","none");
+      $atkBtn.css("background-color", "#555");
+      $atkBtn.css("color", "white");
       this.resetGame();
     } else if (this.computerHp <= 0) {
       $('#main-banner').html("You Win");
-      $atkBtn.css("pointer-events","none")
+      $atkBtn.css("pointer-events","none");
+      $atkBtn.css("background-color", "#555");
+      $atkBtn.css("color", "white");
       this.resetGame();
     }
   },
