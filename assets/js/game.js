@@ -38,6 +38,7 @@ var game = {
 
 $(document).ready(function(){
   $("img").on('click', function(e){
-    console.log(e.currentTarget.offsetParent.id);
+    // console.log(e.currentTarget.offsetParent.id);
+    console.log(e);
   })
 })
