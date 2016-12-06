@@ -145,6 +145,12 @@ hr {
   font-size: 40px;
   color: #1abc9c;
 }
+/* bootstrap extensions */
+.btn-danger {
+  padding: 20px 30px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
 /* ALL ANIMATION FOR KEN HERE */
 .ken {
   width:70px; height:80px; /* exactly the size of an image in our sprite */

@@ -188,6 +188,12 @@ a:after {
   color: #1abc9c;
 }
 
+/* bootstrap extensions */
+.btn-danger {
+  padding: 20px 30px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
 
 /* ALL ANIMATION FOR KEN HERE */
 .ken {
