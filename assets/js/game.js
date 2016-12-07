@@ -43,7 +43,7 @@ var game = {
       this.playerHp += this.characters[this.player].hp;
       this.playerAttack = this.characters[this.player].atk;
       $(".attacker").append($("<div class='" + this.player + " " + this.player + "_stance'>"));
-      $("#playerHp").css('width',this.playerHp)
+      $("#playerHp").css('width',this.playerHp);
       for(var prop in this.characters){
         if(prop !== this.player){
           this.computerPlayer = prop;
@@ -57,11 +57,11 @@ var game = {
   },
 
   startGame: function() {
-    this.constructUi()
+    this.constructUi();
     $atkBtn.addClass('btn btn-danger btn-lg');
-    $atkBtn.html("Attack!")
+    $atkBtn.html("Attack!");
     $("#attack-btn").append($atkBtn);
-    gameSounds.fight.sound.play()
+    gameSounds.fight.sound.play();
     this.needUi = false;
   },
 
@@ -74,7 +74,7 @@ var game = {
       kick: function(){
         $(".ken").addClass('kick');
         setTimeout(function() { $(".ken").removeClass('kick'); }, 500);
-        gameSounds.punch.sound.play()
+        gameSounds.punch.sound.play();
       },
       shoryuken: function(){
         $(".ken").addClass('shoryuken');
@@ -87,7 +87,7 @@ var game = {
       punch: function() {
         $(".ryu").addClass('ryu_punch');
         setTimeout(function() { $(".ryu").removeClass('ryu_punch'); }, 150);
-        gameSounds.punch.sound.play()
+        gameSounds.punch.sound.play();
       },
       kick: function() {
         $(".ryu").addClass('ryu_kick');
@@ -96,7 +96,7 @@ var game = {
     }
 
     var randomProperty = function (obj) {
-      var keys = Object.keys(obj)
+      var keys = Object.keys(obj);
       return obj[keys[ keys.length * Math.random() << 0]];
     };
 
@@ -139,15 +139,15 @@ var game = {
   updateUi: function() {
     var randomAtkMultiplier = Math.floor(Math.random() * 4)+1
     var randomAtkMultiplier2 = Math.floor(Math.random() * 4)+1
-    this.computerHp -= (this.playerAttack * randomAtkMultiplier)
+    this.computerHp -= (this.playerAttack * randomAtkMultiplier);
     $kenStats.hide().html("Ken did an attack of " +this.playerAttack * randomAtkMultiplier+" dmg.").effect('shake', 100).fadeIn('slow');
     $ryuStats.hide().html("Ryu did an attack of " +this.computerAttack * randomAtkMultiplier2+" dmg.").effect('shake', 100).fadeIn('slow');
     $opponentBar.css('width', this.computerHp+'%');
-    this.playerHp -= (this.computerAttack * randomAtkMultiplier2)
+    this.playerHp -= (this.computerAttack * randomAtkMultiplier2);
     $playerBar.html(this.playerHp+'%');
     $opponentBar.html(this.computerHp+'%');
     $playerBar.css('width', this.playerHp+'%');
-    this.checkForWinner()
+    this.checkForWinner();
   },
 
   checkForWinner: function() {
@@ -156,7 +156,7 @@ var game = {
       $atkBtn.css("pointer-events","none");
       $atkBtn.css("background-color", "#555");
       $atkBtn.css("color", "white");
-      gameSounds.you.sound.play()
+      gameSounds.you.sound.play();
       setTimeout(function(){
         gameSounds.lose.sound.play()
       }, 1000);
@@ -166,9 +166,9 @@ var game = {
       $atkBtn.css("pointer-events","none");
       $atkBtn.css("background-color", "#555");
       $atkBtn.css("color", "white");
-      gameSounds.you.sound.play()
+      gameSounds.you.sound.play();
       setTimeout(function(){
-        gameSounds.win.sound.play()
+        gameSounds.win.sound.play();
       }, 1000);
       this.resetGame();
     }
@@ -176,7 +176,7 @@ var game = {
 
   resetGame: function () {
     setTimeout(function() {
-      location.reload()
+      location.reload();
     }, 5300);
   }
 }
