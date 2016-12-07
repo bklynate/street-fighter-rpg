@@ -3,6 +3,9 @@ var $kenImg = $("#ken_img");
 var $ryuImg = $("#ryu_img");
 var $atkBtn = $("#attack-btn");
 var $playerHp = $("#playerHp");
+var $gameInfo = $("#game-info");
+var $kenStats = $("#ken-stats");
+var $ryuStats = $("#ryu-stats");
 var $p1BarDiv;
 var $playerBar;
 var $opponentBar;
@@ -134,10 +137,11 @@ var game = {
   },
 
   updateUi: function() {
-    var randomAtkMultiplier = Math.floor(Math.random() * 3)
-    var randomAtkMultiplier2 = Math.floor(Math.random() * 3)
+    var randomAtkMultiplier = Math.floor(Math.random() * 3)+1
+    var randomAtkMultiplier2 = Math.floor(Math.random() * 3)+1
     this.computerHp -= (this.playerAttack * randomAtkMultiplier)
-    console.log("playerAtk this round: ", (this.playerAttack * randomAtkMultiplier));
+    $kenStats.hide().html("Ken did an attack of " +this.playerAttack * randomAtkMultiplier+" dmg.").effect('shake', 100).fadeIn('slow');
+    $ryuStats.hide().html("Ryu did an attack of " +this.computerAttack * randomAtkMultiplier2+" dmg.").effect('shake', 100).fadeIn('slow');
     $opponentBar.css('width', this.computerHp+'%');
     this.playerHp -= (this.computerAttack * randomAtkMultiplier2)
     console.log("computerAtk this round: ", (this.computerAttack * randomAtkMultiplier2));
@@ -185,4 +189,3 @@ $(document).ready(function(){
     game.updateUi();
   });
 });
-

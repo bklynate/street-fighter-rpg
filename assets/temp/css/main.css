@@ -109,6 +109,17 @@ hr {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
+#ken-stats {
+  margin-left: 74px;
+}
+#ryu-stats {
+  margin-right: 60px;
+}
+#ken-stats,
+#ryu-stats {
+  color: red;
+  font-size: 13px;
+}
 /* +++++ WRAP SECTIONS +++++ */
 #ww {
   padding-top: 70px;
