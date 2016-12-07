@@ -18,13 +18,13 @@ var game = {
       name: "Ryu",
       class: ".ryu",
       hp: 108,
-      atk: 9
+      atk: 4
     },
     "ken": {
       name: "Ken",
       class: ".ken",
       hp: 108,
-      atk: 9
+      atk: 4
     }
   },
   // variables needed to play the game
@@ -61,6 +61,7 @@ var game = {
     $atkBtn.addClass('btn btn-danger btn-lg');
     $atkBtn.html("Attack!")
     $("#attack-btn").append($atkBtn);
+    gameSounds.fight.sound.play()
     this.needUi = false;
   },
 
@@ -73,6 +74,7 @@ var game = {
       kick: function(){
         $(".ken").addClass('kick');
         setTimeout(function() { $(".ken").removeClass('kick'); }, 500);
+        gameSounds.punch.sound.play()
       },
       shoryuken: function(){
         $(".ken").addClass('shoryuken');
@@ -85,6 +87,7 @@ var game = {
       punch: function() {
         $(".ryu").addClass('ryu_punch');
         setTimeout(function() { $(".ryu").removeClass('ryu_punch'); }, 150);
+        gameSounds.punch.sound.play()
       },
       kick: function() {
         $(".ryu").addClass('ryu_kick');
@@ -134,15 +137,15 @@ var game = {
   },
 
   updateUi: function() {
-    var randomAtkMultiplier = Math.floor(Math.random() * 3)+1
-    var randomAtkMultiplier2 = Math.floor(Math.random() * 3)+1
+    var randomAtkMultiplier = Math.floor(Math.random() * 4)+1
+    var randomAtkMultiplier2 = Math.floor(Math.random() * 4)+1
     this.computerHp -= (this.playerAttack * randomAtkMultiplier)
     $kenStats.hide().html("Ken did an attack of " +this.playerAttack * randomAtkMultiplier+" dmg.").effect('shake', 100).fadeIn('slow');
     $ryuStats.hide().html("Ryu did an attack of " +this.computerAttack * randomAtkMultiplier2+" dmg.").effect('shake', 100).fadeIn('slow');
     $opponentBar.css('width', this.computerHp+'%');
     this.playerHp -= (this.computerAttack * randomAtkMultiplier2)
-    $playerBar.html(this.playerHp);
-    $opponentBar.html(this.computerHp);
+    $playerBar.html(this.playerHp+'%');
+    $opponentBar.html(this.computerHp+'%');
     $playerBar.css('width', this.playerHp+'%');
     this.checkForWinner()
   },
@@ -153,12 +156,20 @@ var game = {
       $atkBtn.css("pointer-events","none");
       $atkBtn.css("background-color", "#555");
       $atkBtn.css("color", "white");
+      gameSounds.you.sound.play()
+      setTimeout(function(){
+        gameSounds.lose.sound.play()
+      }, 1000);
       this.resetGame();
     } else if (this.computerHp <= 0) {
       $('#main-banner').html("You Win");
       $atkBtn.css("pointer-events","none");
       $atkBtn.css("background-color", "#555");
       $atkBtn.css("color", "white");
+      gameSounds.you.sound.play()
+      setTimeout(function(){
+        gameSounds.win.sound.play()
+      }, 1000);
       this.resetGame();
     }
   },
