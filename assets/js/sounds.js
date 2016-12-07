@@ -21,7 +21,7 @@ var gameSounds = {
     sound: new Howl({
       urls: ['../../sounds/sf_lose.mp3'],
       volume: 0.1
-    }),
+    })
   },
   you: {
     sound: new Howl({
