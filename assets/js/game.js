@@ -40,11 +40,8 @@ var game = {
   assignPlayers: function(player) {
     if(this.player == '') {
       this.player = player;
-      console.log(this.player);
       this.playerHp += this.characters[this.player].hp;
       this.playerAttack = this.characters[this.player].atk;
-      console.log('player attack: ', this.playerAttack);
-      console.log('player health: ', this.playerHp);
       $(".attacker").append($("<div class='" + this.player + " " + this.player + "_stance'>"));
       $("#playerHp").css('width',this.playerHp)
       for(var prop in this.characters){
@@ -144,7 +141,8 @@ var game = {
     $ryuStats.hide().html("Ryu did an attack of " +this.computerAttack * randomAtkMultiplier2+" dmg.").effect('shake', 100).fadeIn('slow');
     $opponentBar.css('width', this.computerHp+'%');
     this.playerHp -= (this.computerAttack * randomAtkMultiplier2)
-    console.log("computerAtk this round: ", (this.computerAttack * randomAtkMultiplier2));
+    $playerBar.html(this.playerHp);
+    $opponentBar.html(this.computerHp);
     $playerBar.css('width', this.playerHp+'%');
     this.checkForWinner()
   },
