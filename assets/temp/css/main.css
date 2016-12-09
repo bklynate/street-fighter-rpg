@@ -109,14 +109,14 @@ hr {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
-#ken-stats {
+#player-stats {
   margin-left: 74px;
 }
-#ryu-stats {
+#computer-stats {
   margin-right: 60px;
 }
-#ken-stats,
-#ryu-stats {
+#player-stats,
+#computer-stats {
   color: red;
   font-size: 13px;
 }

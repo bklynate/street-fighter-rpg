@@ -1,0 +1,48 @@
+/* ALL ANIMATION FOR RYU HERE */
+.vega {
+  width: 76px; height: 100px; /* exactly the size of an image in our sprite */
+  background-image:url('../imgs/vega.png');
+}
+
+/* css */
+
+.vega_stance {
+  animation: vega_stance steps(3) .3s infinite;
+}
+
+@keyframes vega_stance {
+  from {
+    background-position: 0px -21px;
+  }
+  to {
+    background-position: -248px -10px;
+  }
+}
+
+.vega_punch {
+  animation: vega_punch steps(3) .25s infinite;
+}
+
+@keyframes vega_punch {
+  from {
+    background-position: 0px -131px;
+  }
+  to {
+    background-position: -286px -131px;
+  }
+}
+
+/* kick */
+
+.vega_kick {
+  animation: vega_kick steps(5) 0.5s infinite;
+}
+
+@keyframes vega_kick {
+  from {
+    background-position: 0px -278px;
+  }
+  to {
+    background-position: -350px -278px;
+  }
+}

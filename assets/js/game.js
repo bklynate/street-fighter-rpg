@@ -1,11 +1,12 @@
 // jQuery variables
 var $kenImg = $("#ken_img");
 var $ryuImg = $("#ryu_img");
+var $vegaImg = $("#vega_img");
 var $atkBtn = $("#attack-btn");
 var $playerHp = $("#playerHp");
 var $gameInfo = $("#game-info");
-var $kenStats = $("#ken-stats");
-var $ryuStats = $("#ryu-stats");
+var $playerStats = $("#player-stats");
+var $computerStats = $("#computer-stats");
 var $p1BarDiv;
 var $playerBar;
 var $opponentBar;
@@ -23,6 +24,12 @@ var game = {
     "ken": {
       name: "Ken",
       class: ".ken",
+      hp: 108,
+      atk: 4
+    },
+    "vega": {
+      name: "Vega",
+      class: ".vega",
       hp: 108,
       atk: 4
     }
@@ -94,6 +101,13 @@ var game = {
         setTimeout(function() { $(".ryu").removeClass('ryu_kick'); }, 500);
       }
     }
+    var vegaMoves = {
+      punch: function() {
+        $(".vega").addClass('vega_punch');
+        setTimeout(function() { $(".vega").removeClass('vega_punch'); }, 350);
+        gameSounds.punch.sound.play();
+      }
+    }
 
     var randomProperty = function (obj) {
       var keys = Object.keys(obj);
@@ -104,12 +118,16 @@ var game = {
       randomProperty(kenMoves)();
     } else if (this.player === "ryu") {
       randomProperty(ryuMoves)();
+    } else if (this.player === "vega") {
+      randomProperty(vegaMoves)();
     };
 
     if(this.computerPlayer === "ken") {
       randomProperty(kenMoves)();
     } else if (this.computerPlayer === "ryu") {
       randomProperty(ryuMoves)();
+    } else if (this.player === "vega") {
+      randomProperty(vegaMoves)();
     };
   },
 
@@ -140,8 +158,8 @@ var game = {
     var randomAtkMultiplier = Math.floor(Math.random() * 4)+1
     var randomAtkMultiplier2 = Math.floor(Math.random() * 4)+1
     this.computerHp -= (this.playerAttack * randomAtkMultiplier);
-    $kenStats.hide().html("Ken did an attack of " +this.playerAttack * randomAtkMultiplier+" dmg.").effect('shake', 100).fadeIn('slow');
-    $ryuStats.hide().html("Ryu did an attack of " +this.computerAttack * randomAtkMultiplier2+" dmg.").effect('shake', 100).fadeIn('slow');
+    $playerStats.hide().html(this.player + " did an attack of " +this.playerAttack * randomAtkMultiplier+" dmg.").effect('shake', 100).fadeIn('slow');
+    $computerStats.hide().html(this.computerPlayer + " did an attack of " +this.computerAttack * randomAtkMultiplier2+" dmg.").effect('shake', 100).fadeIn('slow');
     $opponentBar.css('width', this.computerHp+'%');
     this.playerHp -= (this.computerAttack * randomAtkMultiplier2);
     $playerBar.html(this.playerHp+'%');
@@ -191,6 +209,12 @@ $(document).ready(function(){
   $ryuImg.on('click', function(){
     var data = $(this).data("name");
     game.assignPlayers(data);
+  });
+
+  $vegaImg.on('click', function(){
+    var data = $(this).data("name");
+    // $(".attacker").append($("<div class='" + data + " " + data + "_punch'>"));
+    game.assignPlayers(data)
   });
 
   $atkBtn.on('click', function(){
