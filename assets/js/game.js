@@ -109,7 +109,7 @@ var game = {
       },
       rollPunch: function () {
         $(".vega").addClass('vega_roll_punch');
-        setTimeout(function() { $(".vega").removeClass('vega_roll_punch'); }, 350);
+        setTimeout(function() { $(".vega").removeClass('vega_roll_punch'); }, 450);
       }
     }
 
