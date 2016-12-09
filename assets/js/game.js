@@ -130,7 +130,7 @@ var game = {
       randomProperty(kenMoves)();
     } else if (this.computerPlayer === "ryu") {
       randomProperty(ryuMoves)();
-    } else if (this.player === "vega") {
+    } else if (this.computerPlayer === "vega") {
       randomProperty(vegaMoves)();
     };
   },

@@ -35,7 +35,7 @@
 /* roll punch */
 
 .vega_roll_punch {
-  animation: vega_roll_punch steps(5) 0.6s infinite;
+  animation: vega_roll_punch steps(5) 0.45s infinite;
 }
 
 @keyframes vega_roll_punch {
