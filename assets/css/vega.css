@@ -32,17 +32,17 @@
   }
 }
 
-/* kick */
+/* roll punch */
 
-.vega_kick {
-  animation: vega_kick steps(5) 0.5s infinite;
+.vega_roll_punch {
+  animation: vega_roll_punch steps(5) 0.6s infinite;
 }
 
-@keyframes vega_kick {
+@keyframes vega_roll_punch {
   from {
-    background-position: 0px -278px;
+    background-position: 0px -691px;
   }
   to {
-    background-position: -350px -278px;
+    background-position: -516px -691px;
   }
 }

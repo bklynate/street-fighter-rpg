@@ -106,6 +106,10 @@ var game = {
         $(".vega").addClass('vega_punch');
         setTimeout(function() { $(".vega").removeClass('vega_punch'); }, 350);
         gameSounds.punch.sound.play();
+      },
+      rollPunch: function () {
+        $(".vega").addClass('vega_roll_punch');
+        setTimeout(function() { $(".vega").removeClass('vega_roll_punch'); }, 350);
       }
     }
 
@@ -213,7 +217,7 @@ $(document).ready(function(){
 
   $vegaImg.on('click', function(){
     var data = $(this).data("name");
-    // $(".attacker").append($("<div class='" + data + " " + data + "_punch'>"));
+    // $(".attacker").append($("<div class='" + data + " " + data + "_roll_punch'>"));
     game.assignPlayers(data)
   });
 
