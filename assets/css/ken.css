@@ -1,0 +1,83 @@
+/* ALL ANIMATION FOR KEN HERE */
+.ken {
+  width:70px; height:80px; /* exactly the size of an image in our sprite */
+  background-image:url('../imgs/ken.png');
+}
+
+/* css */
+
+.ken_stance {
+  -webkit-animation: ken_stance steps(4) 0.5s infinite;
+  -moz-animation: ken_stance steps(4) 0.5s infinite;
+  -ms-animation: ken_stance steps(4) 0.5s infinite;
+  animation: ken_stance steps(4) 0.5s infinite;
+}
+
+@keyframes ken_stance {
+  from {
+    background-position: 0px -80px;
+  }
+  to {
+    background-position: -280px -80px;
+  }
+}
+
+.punch {
+  animation: punch steps(3) .15s infinite;
+}
+
+@keyframes punch {
+  from {
+    background-position: 0px -160px;
+  }
+  to {
+    background-position: -210px -160px;
+  }
+}
+
+/* kick */
+
+.kick {
+  -webkit-animation: kick steps(5) 0.5s infinite;
+  -moz-animation: kick steps(5) 0.5s infinite;
+  -ms-animation: kick steps(5) 0.5s infinite;
+  animation: kick steps(5) 0.5s infinite;
+}
+
+@keyframes kick {
+  from {
+    background-position: 0px -480px;
+  }
+  to {
+    background-position: -350px -480px;
+  }
+}
+
+/* shoryuken */
+
+.shoryuken {
+  height: 110px;
+  background-image: url(../../imgs/ken-shoryuken.png);
+  -webkit-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  -moz-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  -ms-transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  transition: bottom 0.5s cubic-bezier(0.99, 0.005, 0, 0.42);
+  bottom: 225px;
+  -webkit-animation: shoryuken steps(7) 1s infinite;
+  -moz-animation: shoryuken steps(7) 1s infinite;
+  -ms-animation: shoryuken steps(7) 1s infinite;
+  animation: shoryuken steps(7) 1s infinite;
+}
+
+.shoryuken.down {
+  bottom: 112px;
+}
+
+@keyframes shoryuken {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -490px 0px;
+  }
+}
